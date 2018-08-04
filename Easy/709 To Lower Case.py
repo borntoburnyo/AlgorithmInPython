@@ -23,7 +23,7 @@ class Solution:
     result = []
     
     for ord_str in [ord(s) for s in str]:
-      if ord_str <= ord('Z'):
+      if ord_str >= ord('A') and ord_str <= ord('Z')
         result.append(chr(ord_str + ord_gap))
       else:
         result.append(chr(ord_str))
