@@ -19,3 +19,24 @@ Note:
 S and J will consist of letters and have length at most 50.
 The characters in J are distinct.
 
+class Solution:
+  def numJewelsInStones(self, S, J):
+    """
+    input: 
+      type S: str
+      type J: str
+    """
+    count = 0 
+    
+    for s in S:
+      if s in J:
+        count += 0
+    
+    return count 
+  
+  #test 
+  S = 'aAAbbbb'
+  J = 'aA'
+  
+  solution = Solution()
+  solution.numJewelsInStones(S, J)
