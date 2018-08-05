@@ -42,4 +42,14 @@ Note:
 1 <= grid.length = grid[0].length <= 50
 0 <= grid[i][j] <= 50
 
-
+class Solution:
+ def projectionArea(self, grid):
+  top = sum([i != 0 for i in row in grid for i in row])
+  front = sum([max(row) for row in grid])
+  
+  grid_T = [[row[i] for row in grid] for i in range(len(grid))]
+  side = sum([max(row) for row grid_T])
+  
+  return top + front + side 
+ 
+ 
