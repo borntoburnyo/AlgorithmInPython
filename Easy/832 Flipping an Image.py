@@ -24,9 +24,22 @@ Notes:
 0 <= A[i][j] <= 1
 
 class Solution:
-  def flipAndInvertImage(A):
+  def flipAndInvertImage(self, A):
     A_T = list(zip(*A))
     flipped_A = [[row[len(row) - i - 1] for row in A] for i in range(len(A_T))]
     result = [[abs(row[i] - 1) for row in flipped_A] for i in range(len(A))]
     
     return result
+
+class Solution:
+  def flipAndInvertImage(self, A):
+    A_new = []
+    for l in A:
+      l.reverse()
+      new_l = []
+      for i in l:
+        new_l.append(1-i)
+      A_new.append(new_l)
+      
+    return A_new
+ 
