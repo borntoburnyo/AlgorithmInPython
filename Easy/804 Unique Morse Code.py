@@ -1,4 +1,5 @@
-International Morse Code defines a standard encoding where each letter is mapped to a series of dots and dashes, as follows: "a" maps to ".-", "b" maps to "-...", "c" maps to "-.-.", and so on.
+International Morse Code defines a standard encoding where each letter is mapped to a series of dots and dashes, 
+as follows: "a" maps to ".-", "b" maps to "-...", "c" maps to "-.-.", and so on.
 
 For convenience, the full table for the 26 letters of the English alphabet is given below:
 
@@ -29,5 +30,31 @@ The length of words will be at most 100.
 Each words[i] will have length in range [1, 12].
 words[i] will only consist of lowercase letters.
 
+
 class Solution:
-  def
+ def uniqueMorseRepresentation(self, words):
+  morse = [".-","-...","-.-.","-..",".","..-.","--.","....",
+           "..",".---","-.-",".-..","--","-.","---",".--.",
+           "--.-",".-.","...","-","..-","...-",".--","-..-",
+           "-.--","--.."]
+  words_map = {}
+  for word in words:
+   dword = ''
+   for c in word:
+    dword += morse[ord(c) - ord('a')]
+    words_map[dword] = True
+    
+   return len(words_map)
+  
+  class Solution:
+   def uniqueMorseRepresentation(self, words):
+    morse = [".-","-...","-.-.","-..",".","..-.","--.","....",
+           "..",".---","-.-",".-..","--","-.","---",".--.",
+           "--.-",".-.","...","-","..-","...-",".--","-..-",
+           "-.--","--.."]
+    
+    words_map = []
+    for word in words:
+     words_map.append("".join([morse[ord(c) - ord('a')] for c in word]))
+     
+    return len(set(words_map))
