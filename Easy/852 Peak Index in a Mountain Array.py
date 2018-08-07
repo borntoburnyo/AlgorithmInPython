@@ -19,3 +19,29 @@ Note:
 3 <= A.length <= 10000
 0 <= A[i] <= 10^6
 A is a mountain, as defined above.
+
+#Python default function, linear search, O(N)
+class Solution:
+  def peakIndexInMountainArray(self, A):
+    if len(A) >= 3 and A.count(max(A)) == 1:
+      return A.index(max(A))
+
+#Binary search, O(logN)
+class Solution:
+  def peakIndexInMountainArray(self, A):
+    if len(A) >= 3:
+
+#Golden section search 
+class Solution:
+  def peakIndexInMountainArray(self, A):
+    left, right = 0, len(A) - 1
+    while left < right:
+      mid = (left + right) // 2
+      if A[mid] < A[mid + 1]:
+        left = mid 
+      elif A[mid - 1] > A[mid]
+        right = mid 
+      else:
+        mid 
+        
+      
