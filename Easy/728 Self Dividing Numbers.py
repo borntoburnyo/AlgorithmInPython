@@ -13,3 +13,26 @@ Output: [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 15, 22]
 Note:
 
 The boundaries of each input argument are 1 <= left <= right <= 10000.
+
+class Solution:
+  def self_division(self, x):
+    for c in str(x):
+      if int(c) == 0 or x % int(c) != 0:
+        return False
+      
+    return True 
+  
+  def selfDividingNumbers(self, left, right):
+    """
+    :type left: int
+    :type right: int
+    :rtype: List[int]
+    """
+    return [x for x in range(left, right+1) if self.self_division(x)]
+
+class Solution:
+  def selfDividingNumbers(self, left, right):
+    flag = lambda x: if '0' not in str(x) and all(x % int(c) == 0 for c in str(x))
+    return filter(flag, range(left, right + 1))
+    
+     
