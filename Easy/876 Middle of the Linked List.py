@@ -48,14 +48,14 @@ class Solution:
     rtype: ListNode 
     """
     #count length 
-    count = 0
+    count = 1
     current = head 
     while current.next is not None:
       current = current.next
       count += 1
     
     i = 0
-    while i < count / 2:
+    while i < count // 2:
       head = head.next
       i += 1
       
