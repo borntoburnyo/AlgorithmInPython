@@ -23,5 +23,21 @@
  *   A, B have equal lengths in range [1, 100].
  *   A[i], B[i] are integers in range [0, 10^5].
  **/
+import collections 
  
- 
+class Solution:
+ def findAnagramMappings(self, A, B):
+  """
+  dtype A: List[int]
+  dtype B: List[int]
+  rtype: List[int]
+  """
+  maps = collections.defaultdict(collections.deque)
+  for i, b in enumerate(B):
+   maps[b].append(i)
+   
+  result = []
+  for a in A:
+   result.append(maps[a].popleft())
+   
+  return result 
