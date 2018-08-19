@@ -25,10 +25,10 @@ class Solution:
 		result = []
 		while len(visited) > 0:
 			node = visited.pop()
-			if node.left:
-				visited.append(node.left)
 			if node.right:
 				visited.append(node.right)
+			if node.left:
+				visited.append(node.left)
 			if not node.left and not node.right:
 				result.insert(0, node.val)
 				
