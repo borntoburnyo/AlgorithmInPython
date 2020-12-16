@@ -1,2 +1,2 @@
 # AlgorithmInPython
-Fun exploring.
+A little prep for job hunting.
