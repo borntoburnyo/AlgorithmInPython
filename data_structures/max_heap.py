@@ -57,11 +57,26 @@ class MaxHeap:
 	def extract_max(self):
 		return self.delete(0)	
 
+	def increase_key(self, i, key):
+		# increase the key of heap[i] to key
+		if key < self.heap[i]:
+			raise KeyError("The new key is smaller than the current key!")
+		self.heap[i] = key
+		# maintain the heap invariant
+		parent = i // 2
+		if i == 0:
+			return
+		while parent >= 0 and self.heap[parent] < self.heap[i]:
+			self.heap[parent], self.heap[i] = self.heap[i], self.heap[parent]
+			i = parent
+			parent = i // 2
+		return 
+
 	def print(self):
 		return print(self.heap)
 
-hp1 = MaxHeap()
-print(hp1.delete(100))
+#hp1 = MaxHeap()
+#print(hp1.delete(100))
 
 hp = MaxHeap([0,3,2,10,8,5,6,9,21])
 hp.print()
@@ -76,3 +91,7 @@ print(hp.delete(3))
 print(hp.extract_max())
 
 #hp.delete(100)
+hp.increase_key(0, 10000)
+hp.print()
+hp.increase_key(3, 20000)
+hp.print()
