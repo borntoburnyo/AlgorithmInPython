@@ -1,2 +1,1 @@
-# AlgorithmInPython
-A little prep for job hunting.
+Another shot start in 2022.
