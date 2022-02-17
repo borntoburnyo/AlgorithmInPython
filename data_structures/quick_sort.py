@@ -11,8 +11,10 @@ class quick_sort:
 		return self.nums
 
 	def partition(self, p, r):
+		# using the last value of the list as pivot value
 		x = self.nums[r-1]
 		i = p - 1
+		# find small values and keep them at the first half
 		for j in range(p, r-1):
 			if self.nums[j] <= x:
 				i += 1
