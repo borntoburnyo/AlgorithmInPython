@@ -22,5 +22,10 @@ class quick_sort:
 		self.nums[i+1], self.nums[r-1] = self.nums[r-1], self.nums[i+1]
 		return i+1
 
+	def randomized_partition(self, p, r):
+		i = random(p,r)				
+		self.nums[r-1], self.nums[i] = self.nums[i], self.nums[r-1]
+		return self.partition(p, r)
+
 qs = quick_sort([2,8,7,1,3,5,6,4])
 print(qs.sort(0, 8))
