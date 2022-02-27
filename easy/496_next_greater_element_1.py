@@ -2,7 +2,7 @@ class Solution:
 	def nextGreaterElement(self, nums1, nums2):
 		hmap, stk = {}, []
 		for x in nums2:
-			if not stk and stk[-1] >= x:
+			if not stk or stk[-1] >= x:
 				stk.append(x)
 			else:
 				while stk and stk[-1] < x:
@@ -21,7 +21,7 @@ class Solution:
     def v2(self, nums1, nums2):
         hmap, stk = {}, []
         for i in range(len(nums2)):
-            if not stk and nums2[stk[-1]] < nums2[i]:
+            if not stk or nums2[stk[-1]] < nums2[i]:
                 stk.append(i) 
             else:
                 while stk and nums2[stk.pop()] < nums2[i]:
@@ -31,7 +31,7 @@ class Solution:
         res = []
         for x in nums1:
             if nums2.index(x) in hmap:
-                res.append(hmap[nums2.index(x)])
+                res.append(hmap[i])
             else:
                 res.append(-1)
 
