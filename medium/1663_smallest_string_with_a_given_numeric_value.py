@@ -19,3 +19,14 @@ class Solution:
 
         # Convert the values in the deque to characters and form a string
         return "".join([chr(96+x) for x in dek])
+
+    def v2(self, n, k):
+        res = [1]*n # Pre-populate 'a' in every position
+        k -= n
+        for i in range(n-1, -1, -1):
+            temp = min(k, 25)
+            res[i] += temp
+            k -= temp
+
+        return "".join([chr(96 + x) for x in res])
+
