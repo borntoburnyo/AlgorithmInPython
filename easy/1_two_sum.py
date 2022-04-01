@@ -5,3 +5,6 @@ class Solution:
 			remn = target - nums[i]
 			if remn in nums_d and nums_d[remn] != i:
 				return [i, nums_d[remn]]
+
+# Need store index as requested by the return
+# Note the sum-number1=number2

@@ -17,3 +17,6 @@ class Solution:
             hmap[x] = i # Update hash map
 
         return res
+
+# Need to memorize the seen characters, use hash map / dictionary
+# Then get the desired output based on logic

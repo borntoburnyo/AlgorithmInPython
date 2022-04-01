@@ -23,3 +23,22 @@ class Solution {
 		return R - L - 1;
 	}
 }
+
+    def v2(self, s):
+        res = ""
+        for i in range(len(s)):
+            temp = self.helper(s, i, i)
+            if len(temp) > len(res):
+                res = temp
+            
+            temp = self.helper(s, i, i+1)
+            if len(temp) > len(res):
+                res = temp
+        return res
+
+    def helper(self, low, high):
+        while low >= 0 and high < len(s) and s[low] == s[high]:
+            low -= 1
+            high += 1
+        
+        return s[low+1, high]
