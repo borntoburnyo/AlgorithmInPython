@@ -9,3 +9,5 @@ class Solution:
                 res += hmap[s[i]]
 
         return res + hmap[s[-1]]
+
+# Pure math problem
