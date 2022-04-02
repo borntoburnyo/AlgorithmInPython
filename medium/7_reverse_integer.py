@@ -9,3 +9,5 @@ class Solution:
 			x = x // 10
 			return 0 if rev > 2**31 - 1
 		return sign*rev
+
+# x = (x//10)*10 + x%10
