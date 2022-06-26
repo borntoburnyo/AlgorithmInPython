@@ -42,3 +42,5 @@ class Solution {
             high += 1
         
         return s[low+1, high]
+
+* Going forward and backward simultaneously
