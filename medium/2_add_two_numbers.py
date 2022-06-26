@@ -23,8 +23,11 @@ class Solution:
             carry = val // 10
 
         # If there is still 1 carry left
-        if carry:
+        if carry > 0:
             res.next = ListNode(carry)
 
 
         return resHead.next
+
+# Need intermediate carry value to store
+# How to traverse a linked list
