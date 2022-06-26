@@ -9,12 +9,12 @@ class Solution:
         res = 0
 
         for i, char in enumerate(s):
-            if char in hmap and hmap[x] >= left:
+            if char in hmap and hmap[char] >= left:
                 left = hmap[char] + 1 # Update the left index rolling forward
             else:
                 res = max(res, i - left + 1) # O/W update the return value
 
-            hmap[x] = i # Update hash map
+            hmap[char] = i # Update hash map
 
         return res
 
